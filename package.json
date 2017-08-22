@@ -1,6 +1,6 @@
 {
 	"name": "babel-preprocessor",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "This is a Babel plugin that adds preprocessor directives to Javascript.",
 	"author": "Russ Panula <russ@dfa.net>",
 	"main": "lib/index.js",
@@ -16,8 +16,7 @@
 		"build": "babel src -d lib",
 		"test": "mocha --compilers js:babel-register",
 		"test:debug": "mocha --compilers js:babel-register --inspect-brk",
-		"test:watch": "npm run test -- --watch",
-		"prepublish": "npm run clean && npm run build"
+		"test:watch": "npm run test -- --watch"
 	},
 	"keywords": [
 		"babel-plugin"
