@@ -120,7 +120,6 @@ function handlePrepCall(path, state) {
 }
 
 function handleInclude(path, state) {
-	debugger;
 	if ( !state.current || (state.current && state.current.satisfied && !state.current.remove) ) {
 		var inc = "";
 		for (let i = 0; i < path.node.expression.arguments.length; i++) {
@@ -224,7 +223,6 @@ function handleElseIf(path, state) {
 }
 
 function handleElse(path, state) {
-	debugger;
 	if (!state.current)
 		throw path.buildCodeFrameError("missing IF statement");
 
