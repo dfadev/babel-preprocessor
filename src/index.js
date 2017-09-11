@@ -43,7 +43,7 @@ export default function({types: t }) {
 }
 
 function handleStatement(path, state) {
-	if (state.current && state.current.prep && path.parent == state.current.parent) { // && !state.remove) {
+	if (state.current && state.current.prep && path.parent == state.current.parent) {
 		state.current.code.push(path.node);
 		path.remove();
 	}
