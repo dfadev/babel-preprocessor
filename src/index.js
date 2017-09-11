@@ -89,6 +89,7 @@ function handleEnd(path, state) {
 			evalGlobal(code);
 		}
 		state.current.prep = false;
+		path.remove();
 	} else if (state.current) {
 		state.current = undefined;
 		if (state.nested) {
@@ -97,8 +98,8 @@ function handleEnd(path, state) {
 				state.nested = undefined;
 			}
 		}
+		path.remove();
 	}
-	path.remove();
 }
 
 function handlePrepCall(path, state) {
