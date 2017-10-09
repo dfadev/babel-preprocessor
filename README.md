@@ -77,10 +77,35 @@ console.log(PREP[x], PREP[y], PREP[z]);
 ```
 
 #### INCLUDE(expr, ...)
-Include files.  If this is used inside a PREPROCESSOR or PREP directive, the file will execute within the transpilation global context.  If used outside a PREPROCESSOR directive it will be included in the transpilation output.
+Include files as code.  If this is used inside a PREPROCESSOR or PREP directive, the file will execute within the transpilation global context.  If used outside a PREPROCESSOR directive it will be included in the transpilation output.
 ```js
 INCLUDE("include/common-imports.js")
 ```
+
+#### $INCLUDE(expr, ...)
+Include files as a string.
+```js
+var x = $INCLUDE("include/about.txt", "include/about_footer.txt")
+console.log(x);
+```
+
+#### PROCINCLUDE(command, arguments, options)
+Include process output as code.  This takes the same parameters as child_process.spawnSync.  If this is used inside a PREPROCESSOR or PREP directive, the file will execute within the transpilation global context.  If used outside a PREPROCESSOR directive it will be included in the transpilation output.
+
+```js
+PROCINCLUDE('echo', [ 'var x = 123' ])
+```
+
+#### $PROCINCLUDE(command, arguments, options)
+Include process output as a string.  This takes the same parameters as child_process.spawnSync.
+```js
+var transpileDate = $PROCINCLUDE('date');
+var platform = $PROCINCLUDE('uname', [ '-a' ]);
+
+console.log('transpiled at ', transpileDate);
+console.log('on platform ', platform);
+```
+
 #### IF/ELSEIF (expr, ...)
 Conditional compilation.
 ```js
