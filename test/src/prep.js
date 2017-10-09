@@ -89,3 +89,20 @@ IF(true)
 	END
 END
 
+var data = $INCLUDE('test/include/text.txt');
+
+PREP
+	var prepData = $INCLUDE('test/include/text.txt');
+END
+
+console.log(PREP[prepData]);
+
+var textFromShellCmd = $PROCINCLUDE('echo', [ 'hello there', 'again' ], { shell: true })
+
+PREP
+	var shellTxt = $PROCINCLUDE('echo', [ 'one', 'two', 'three' ]);
+END
+
+console.log(PREP[shellTxt]);
+
+PROCINCLUDE('echo', [ 'var x = 123' ])

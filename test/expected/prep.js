@@ -25,3 +25,14 @@ console.log('end included file: OK');
 console.log('prepInclude3 = ', 'OK');
 
 console.log("inner if OK");
+
+
+var data = 'Some text\nSome text\nSome text\nSome text\nSome text\nSome text\n';
+
+console.log('Some text\nSome text\nSome text\nSome text\nSome text\nSome text\n');
+
+var textFromShellCmd = 'hello there again\n';
+
+console.log('one two three\n');
+
+var x = 123;
