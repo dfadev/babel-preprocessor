@@ -1,6 +1,6 @@
 {
 	"name": "babel-preprocessor",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "This is a Babel plugin that adds preprocessor directives to Javascript.",
 	"author": "Russ Panula <russ@dfa.net>",
 	"main": "lib/index.js",
